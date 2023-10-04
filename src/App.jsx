@@ -1,17 +1,19 @@
-import Counter from './Counter';
-import './App.css';
-import Todolist from './Todolist';
-import { Outlet,Link } from 'react-router-dom';
 
-function App() {
-  return (
-    <div className="myBox">
-     <h1>ReactJS Appliacation by susmitha</h1>
-      <Link to="/counter">Counter</Link>&nbsp;
-      <Link to="/todolist">Todolist</Link>&nbsp;
-      <Outlet></Outlet>
-    </div>
-  );
+import'./App.css';
+import { Provider } from 'react-redux';
+import store from'./store/store';
+import Counter from './components/Counter';
+import Todolist from './store/reducers/Todolist';
+function App(){
+    return(
+        <Provider store={store}>
+            <div className="mybox">
+                
+            <h1>App</h1>
+            <Todolist></Todolist>
+            <Counter></Counter>
+        </div>
+        </Provider>
+    );
 }
-
 export default App;
