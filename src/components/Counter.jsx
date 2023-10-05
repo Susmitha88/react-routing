@@ -11,4 +11,4 @@ function Counter(props){
         </div>
     )
 }
-export default connect(function(store){return store})(counter);
+export default connect(function(store){return store})(Counter);
